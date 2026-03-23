@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- section presentation -->
+<section class="px-6 md:px-16 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[85vh]">
+    <div class="text-center md:text-left">
+        <p class="text-primary uppercase tracking-[0.3em] text-xs mb-4">Emmanuel Katalay</p>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
+            Développeur Backend &
+            <span class="text-primary block">Data Scientist</span>
+        </h1>
+
+        <p class="mt-6 text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-xl mx-auto md:mx-0">
+            Je conçois des applications web robustes, des API performantes et des solutions data intelligentes avec Django, Python, Java et PHP.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-full shadow-glow hover:scale-105 transition">
+                Voir mes projets
+            </a>
+            <a href="#contact" class="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-full hover:border-primary transition">
+                Me contacter
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full max-w-lg rounded-3xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800 h-[320px] md:h-[380px] overflow-hidden">
+
+    <!-- IMAGE BACKGROUND -->
+    <img 
+        src="{% static 'image/setup.JPEG' %}" 
+        alt="Portfolio"
+        class="absolute inset-0 w-full h-full object-cover"
+    >
+
+    <!-- OVERLAY SOMBRE -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- CONTENU -->
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+
+        <div class="text-5xl mb-4">💻</div>
+
+        <h3 class="text-white font-bold text-xl">
+            Portfolio Premium
+        </h3>
+
+        <p class="text-gray-300 text-sm mt-2">
+            Django • Tailwind • API • Data
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- section à propos -->
+
+<section id="about" class="px-6 md:px-16 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="w-full max-w-md mx-auto md:mx-0 rounded-3xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800 h-[320px] md:h-[380px] overflow-hidden">
+
+    <img 
+        src="{% static 'image/profil3.JPEG' %}" 
+        alt="Emmanuel Katalay"
+        class="w-full h-full object-cover"
+    >
+
+    <!-- overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+</div>
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">À propos de moi</h2>
+            <p class="text-gray-600 dark:text-gray-400 leading-8">
+                Je suis développeur backend et data scientist. J’aime construire des systèmes fiables, maintenables et élégants, avec une forte attention sur la performance, l’architecture et l’expérience utilisateur.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- section compétences -->
+
+<section id="skills" class="px-6 md:px-16 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Compétences</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">Python / Django</div>
+        <div class="p-6 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">Java</div>
+        <div class="p-6 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">PHP</div>
+        <div class="p-6 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">Data Science / ML</div>
+    </div>
+</section>
+
+<!-- section services -->
+
+<section id="services" class="px-6 md:px-16 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-8 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">
+            <h3 class="font-bold text-xl mb-3">Développement Desktop</h3>
+            <p class="text-gray-600 dark:text-gray-400">Création d’applications bureaux.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">
+            <h3 class="font-bold text-xl mb-3">Applications web</h3>
+            <p class="text-gray-600 dark:text-gray-400">Sites dynamiques, dashboard admin, intégrations et déploiement.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800">
+            <h3 class="font-bold text-xl mb-3">Analyse de données</h3>
+            <p class="text-gray-600 dark:text-gray-400">Nettoyage, modélisation et valorisation de données pour la décision.</p>
+        </div>
+    </div>
+</section>
+
+<!-- section projets -->
+
+<section id="projects" class="px-6 md:px-16 py-16">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold">Projets récents</h2>
+        <span class="text-sm text-gray-500 dark:text-gray-400">
+            Page {{ projects.number }} sur {{ projects.paginator.num_pages }}
+        </span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for project in projects %}
+        <div class="rounded-2xl overflow-hidden bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800 shadow-lg hover:scale-[1.02] transition">
+
+            <div class="h-48 md:h-56 relative overflow-hidden">
+                {% if project.image %}
+                    <img 
+                        src="{{ project.image.url }}" 
+                        alt="{{ project.title }}"
+                        class="absolute inset-0 w-full h-full object-cover"
+                    >
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-primary/20"></div>
+                {% else %}
+                    <div class="w-full h-full bg-gradient-to-br from-primary/30 to-black/80"></div>
+                {% endif %}
+            </div>
+
+            <div class="p-6">
+                <h3 class="font-bold text-xl">{{ project.title }}</h3>
+
+                <p class="text-gray-600 dark:text-gray-400 mt-2">
+                    {{ project.description|truncatechars:90 }}
+                </p>
+
+                <div class="mt-4">
+                    {% if project.lien %}
+                        <a href="{{ project.lien }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-block text-xs px-3 py-1 bg-primary/20 text-primary rounded-full hover:bg-primary hover:text-white transition">
+                            voir en ligne
+                        </a>
+                    {% else %}
+                        <span class="inline-block text-xs px-3 py-1 bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">
+                            en développement
+                        </span>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        {% empty %}
+        <p class="text-gray-500">Aucun projet</p>
+        {% endfor %}
+    </div>
+
+    {% if projects.has_other_pages %}
+    <div class="mt-10 flex justify-center items-center gap-2 flex-wrap">
+
+        {% if projects.has_previous %}
+            <a href="?page={{ projects.previous_page_number }}#projects"
+               class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-primary transition">
+                Précédent
+            </a>
+        {% endif %}
+
+        {% for num in projects.paginator.page_range %}
+            {% if num == projects.number %}
+                <span class="px-4 py-2 rounded-full bg-primary text-white">
+                    {{ num }}
+                </span>
+            {% else %}
+                <a href="?page={{ num }}#projects"
+                   class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-primary transition">
+                    {{ num }}
+                </a>
+            {% endif %}
+        {% endfor %}
+
+        {% if projects.has_next %}
+            <a href="?page={{ projects.next_page_number }}#projects"
+               class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 hover:border-primary transition">
+                Suivant
+            </a>
+        {% endif %}
+
+    </div>
+    {% endif %}
+</section>
+
+<!-- section contact -->
+
+<section id="contact" class="relative z-20 px-6 py-16">
+
+    <div class="relative z-20 max-w-xl mx-auto rounded-3xl bg-gray-100 dark:bg-card border border-gray-200 dark:border-gray-800 p-6 md:p-8">
+
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">
+            Contact
+        </h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="mb-4 p-3 rounded-xl bg-green-100 text-green-700 text-sm">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" class="space-y-3">
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="nom"
+                placeholder="Votre nom"
+                required
+                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Votre email"
+                required
+                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+            >
+
+            <input
+                type="text"
+                name="sujet"
+                placeholder="Sujet"
+                required
+                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+            >
+
+            <textarea
+                name="message"
+                rows="4"
+                placeholder="Votre message"
+                required
+                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+            ></textarea>
+
+            <button
+                type="submit"
+                class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:scale-[1.02] transition">
+                Envoyer
+            </button>
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
