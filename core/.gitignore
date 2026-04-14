@@ -1,0 +1,23 @@
+# Environnement virtuel (très lourd, ne pas envoyer)
+venv/
+env/
+
+# Cache Python (inutile et polluant)
+**/__pycache__/
+*.pyc
+
+# Base de données locale (Django)
+db.sqlite3
+
+# Fichiers de configuration sensibles
+.env
+
+# Gros fichiers de données (si vous en avez)
+*.csv
+*.ipynb_checkpoints/
+# fichier statique généré par Django (si vous ne le servez pas via un CDN)
+staticfiles/
+# Fichiers médias (si vous ne les servez pas via un CDN)
+media/
+
+
