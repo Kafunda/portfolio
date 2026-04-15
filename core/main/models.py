@@ -9,6 +9,9 @@ class Project(models.Model):
     category = models.CharField(max_length=100)
     lien = models.URLField(blank=True, null=True)
 
+    class Meta:
+        ordering = ['-id']
+
     def __str__(self):
         return self.title
 

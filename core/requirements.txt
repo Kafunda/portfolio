@@ -7,14 +7,10 @@ Django==6.0.3
 django-cloudinary-storage==0.3.0
 django-jazzmin==3.0.4
 djangorestframework==3.17.1
-dotenv==0.9.9
-easy-colors==0.0.1
 idna==3.11
-Paginator==0.5.1
 pillow==12.2.0
 python-dotenv==1.2.2
 requests==2.33.1
-send-mail==0.0.2
 six==1.17.0
 sqlparse==0.5.5
 tzdata==2025.3

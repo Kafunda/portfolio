@@ -1,23 +1,59 @@
-# Environnement virtuel (très lourd, ne pas envoyer)
+# ========================
+# ENVIRONNEMENT
+# ========================
 venv/
 env/
-
-# Cache Python (inutile et polluant)
-**/__pycache__/
-*.pyc
-
-# Base de données locale (Django)
-db.sqlite3
-
-# Fichiers de configuration sensibles
 .env
 
-# Gros fichiers de données (si vous en avez)
-*.csv
-*.ipynb_checkpoints/
-# fichier statique généré par Django (si vous ne le servez pas via un CDN)
+# ========================
+# PYTHON
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ========================
+# DJANGO
+# ========================
+db.sqlite3
+*.sqlite3
+
+# Fichiers générés
 staticfiles/
-# Fichiers médias (si vous ne les servez pas via un CDN)
 media/
 
+# ========================
+# LOGS
+# ========================
+*.log
 
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# VS CODE / IDE
+# ========================
+.vscode/
+.idea/
+
+# ========================
+# JUPYTER / DATA
+# ========================
+*.ipynb_checkpoints/
+*.csv
+
+# ========================
+# BUILD / CACHE
+# ========================
+*.egg-info/
+dist/
+build/
+
+# ========================
+# SECRETS (CRITIQUE)
+# ========================
+.env

@@ -294,46 +294,48 @@
         {% endif %}
 
         <form method="POST" class="space-y-3">
-            {% csrf_token %}
+    {% csrf_token %}
 
-            <input
-                type="text"
-                name="nom"
-                placeholder="Votre nom"
-                required
-                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
-            >
+    {{ form.honeypot }}
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Votre email"
-                required
-                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
-            >
+    <input
+        type="text"
+        name="nom"
+        placeholder="Votre nom"
+        required
+        class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+    >
 
-            <input
-                type="text"
-                name="sujet"
-                placeholder="Sujet"
-                required
-                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
-            >
+    <input
+        type="email"
+        name="email"
+        placeholder="Votre email"
+        required
+        class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+    >
 
-            <textarea
-                name="message"
-                rows="4"
-                placeholder="Votre message"
-                required
-                class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
-            ></textarea>
+    <input
+        type="text"
+        name="sujet"
+        placeholder="Sujet"
+        required
+        class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+    >
 
-            <button
-                type="submit"
-                class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:scale-[1.02] transition">
-                Envoyer
-            </button>
-        </form>
+    <textarea
+        name="message"
+        rows="4"
+        placeholder="Votre message"
+        required
+        class="w-full p-3 rounded-xl bg-white dark:bg-black border border-gray-300 dark:border-gray-700 outline-none focus:ring-2 focus:ring-primary"
+    ></textarea>
+
+    <button
+        type="submit"
+        class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:scale-[1.02] transition">
+        Envoyer
+    </button>
+</form>
 
     </div>
 
