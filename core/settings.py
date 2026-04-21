@@ -10,6 +10,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = os.getenv("DJANGO_DEBUG", "False") == "True"
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
+TURNSTILE_SITE_KEY = os.getenv("TURNSTILE_SITE_KEY")
+TURNSTILE_SECRET_KEY = os.getenv("TURNSTILE_SECRET_KEY")
+
 INSTALLED_APPS = [
     "jazzmin",
 
@@ -37,6 +40,14 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+RATELIMIT_USE_CACHE = "default"
+
+SILENCED_SYSTEM_CHECKS = [
+    "django_ratelimit.E003",
+    "django_ratelimit.W001",
+]
+
 
 ROOT_URLCONF = "core.urls"
 
@@ -130,14 +141,15 @@ if os.getenv("USE_CLOUDINARY", "False") == "True":
 
 # Sécurité production
 if not DEBUG:
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
+    CSRF_TRUSTED_ORIGINS = os.getenv(
+        "DJANGO_CSRF_TRUSTED_ORIGINS",
+        ""
+    ).split(",") if os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS") else []
 
     SECURE_SSL_REDIRECT = True
-
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    X_FRAME_OPTIONS = "DENY"
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
