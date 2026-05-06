@@ -136,7 +136,7 @@ CLOUDINARY_STORAGE = {
 }
 
 # Si tu veux stocker les images sur Cloudinary en production
-if os.getenv("USE_CLOUDINARY", "False") == "True":
+if os.getenv("USE_CLOUDINARY", "True") == "True":
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Sécurité production
