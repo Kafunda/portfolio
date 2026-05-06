@@ -101,7 +101,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Garde cette ligne pour la compatibilité Cloudinary
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Force WhiteNoise à trouver les fichiers même sans compression
 WHITENOISE_USE_FINDERS = True
@@ -136,7 +136,7 @@ CLOUDINARY_STORAGE = {
 }
 
 # Si tu veux stocker les images sur Cloudinary en production
-if os.getenv("USE_CLOUDINARY", "True") == "True":
+if os.getenv("USE_CLOUDINARY", "False") == "True":
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Sécurité production
